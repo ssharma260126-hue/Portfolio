@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
+<title>Shivam Sharma — Political Science Scholar & UPSC Aspirant</title>
+<style>
+:root{
+  --navy:#07111f; --charcoal:#0b0f14; --ivory:#f5f0e6;
+  --muted:#aeb8c4; --gold:#d8b56a; --saffron:#ff9933; --green:#138808;
+  --line:rgba(245,240,230,.14); --glass:rgba(255,255,255,.055);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--charcoal);color:var(--ivory);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1000;background:radial-gradient(circle at 20% 20%,rgba(216,181,106,.04),transparent 30%),radial-gradient(circle at 80% 60%,rgba(20,90,160,.06),transparent 35%);mix-blend-mode:screen}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1180px,92%);margin:auto}
+.section{padding:120px 0;position:relative}
+.kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+h2{font-family:Georgia,serif;font-size:clamp(2.5rem,6vw,5.5rem);line-height:.95;font-weight:500;letter-spacing:-.045em}
+.section-intro{max-width:680px;color:var(--muted);font-size:1.05rem;line-height:1.8;margin-top:25px}
+#loader{position:fixed;inset:0;background:#05080d;z-index:9999;display:grid;place-items:center;transition:opacity 1s,visibility 1s}
+.loader-inner{text-align:center;width:min(520px,80%)}
+.loader-name{font-family:Georgia,serif;font-size:clamp(2rem,6vw,5rem);letter-spacing:.08em}
+.loader-sub{font-size:.68rem;letter-spacing:.35em;color:#8994a2;margin:14px 0 25px}
+.load-line{height:1px;background:#1c2632;overflow:hidden}
+.load-line span{display:block;width:0;height:100%;background:var(--gold);animation:load 1.7s cubic-bezier(.65,0,.35,1) forwards}
+@keyframes load{to{width:100%}}
+#loader.done{opacity:0;visibility:hidden}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:22px 0;transition:.4s}
+.nav.scrolled{background:rgba(5,9,14,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);padding:14px 0}
+.nav-inner{display:flex;justify-content:space-between;align-items:center}
+.brand{font-family:Georgia,serif;font-size:1.15rem;letter-spacing:.1em}
+.nav-links{display:flex;gap:23px;align-items:center;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.nav-links a{color:#bfc8d1;position:relative}
+.nav-links a:after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:1px;background:var(--gold);transition:.3s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-links a:hover:after,.nav-links a.active:after{width:100%}
+.menu{display:none;background:none;border:0;color:white;font-size:1.4rem}
+.hero{min-height:100svh;position:relative;display:grid;align-items:center;overflow:hidden;background:radial-gradient(circle at 50% 50%,#11243b 0,#07111f 42%,#05080d 100%)}
+#worldCanvas{position:absolute;inset:0;width:100%;height:100%;opacity:.82}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,8,13,.92) 0%,rgba(4,8,13,.54) 47%,rgba(4,8,13,.16) 100%)}
+.hero-content{position:relative;z-index:2;padding-top:80px}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);padding:9px 13px;border-radius:100px;background:rgba(255,255,255,.03);color:#c7d0da;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
+.hero-tag i{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 15px var(--gold)}
+.hero h1{font-family:Georgia,serif;font-size:clamp(4rem,11vw,10.5rem);line-height:.78;letter-spacing:-.065em;font-weight:500;margin:28px 0}
+.hero-role{font-size:clamp(1rem,2vw,1.35rem);color:#d5dbe2;letter-spacing:.04em}
+.hero-desc{max-width:610px;color:#9ca8b5;line-height:1.8;margin:22px 0 30px;font-size:1rem}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:14px 20px;border:1px solid var(--line);border-radius:2px;background:rgba(255,255,255,.04);color:#fff;cursor:pointer;transition:.3s;font-size:.76rem;letter-spacing:.13em;text-transform:uppercase}
+.btn.primary{background:var(--gold);border-color:var(--gold);color:#101010}
+.btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(0,0,0,.3)}
+.rotating{margin-top:45px;color:#8e9aaa;font-family:Georgia,serif;font-size:1.2rem}
+.rotating span{color:var(--gold)}
+.scroll-cue{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);font-size:.63rem;letter-spacing:.28em;color:#7f8994;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:9px}
+.scroll-cue:after{content:"";width:1px;height:45px;background:linear-gradient(var(--gold),transparent);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.25;transform:scaleY(.55)}}
+.glass{background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.22);backdrop-filter:blur(14px)}
+.world{background:#060b12;overflow:hidden}
+.world-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:center}
+.mapbox{min-height:500px;position:relative;border:1px solid var(--line);overflow:hidden;background:radial-gradient(circle at center,#102237,#05090f 65%)}
+.mapbox:before{content:"LAT 23.2599° N  /  LONG 77.4126° E";position:absolute;top:18px;left:18px;color:#667585;font-size:.6rem;letter-spacing:.18em;z-index:2}
+.mapbox:after{content:"GLOBAL POLITICAL FIELD";position:absolute;bottom:18px;right:18px;color:#667585;font-size:.58rem;letter-spacing:.2em}
+#miniMap{position:absolute;inset:0;width:100%;height:100%}
+.flag-cluster{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.flag{padding:10px 13px;border:1px solid var(--line);background:var(--glass);font-size:.75rem;transition:.3s}
+.flag:hover{border-color:var(--gold);transform:translateY(-5px)}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:center}
+.portrait{aspect-ratio:4/5;border:1px solid var(--line);position:relative;overflow:hidden;background:linear-gradient(135deg,#172334,#070b10);display:grid;place-items:center}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.portrait-placeholder{text-align:center;color:#718090;padding:25px}
+.portrait-placeholder strong{display:block;font-family:Georgia,serif;color:#b8c2cd;font-size:2rem;margin-bottom:8px}
+.bio{font-size:1.05rem;line-height:1.95;color:#b9c3ce}
+.bio b{color:var(--ivory);font-weight:500}
+.bio-highlight{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:40px;border:1px solid var(--line)}
+.stat{background:#0b1017;padding:24px}.stat strong{font:2rem Georgia,serif;color:var(--gold);display:block}.stat span{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#7e8a97}
+.timeline-wrap{margin-top:70px;position:relative}
+.timeline{position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(transparent,var(--gold),transparent);transform:translateX(-50%)}
+.timeline-item{width:50%;padding:30px 55px;position:relative}
+.timeline-item:nth-child(even){margin-left:50%}
+.timeline-item:before{content:"";position:absolute;top:47px;width:12px;height:12px;border:1px solid var(--gold);background:#0b0f14;border-radius:50%;box-shadow:0 0 20px rgba(216,181,106,.4)}
+.timeline-item:nth-child(odd):before{right:-6px}.timeline-item:nth-child(even):before{left:-6px}
+.timeline-card{padding:28px}.timeline-year{color:var(--gold);font-size:.7rem;letter-spacing:.2em}.timeline-card h3{font:1.65rem Georgia,serif;margin:10px 0}.timeline-card p{color:#8f9aa7;line-height:1.7;font-size:.9rem}
+.gallery{background:linear-gradient(#080d14,#05080c)}
+.gallery-stage{height:70vh;min-height:520px;margin-top:60px;position:relative;overflow:hidden;border:1px solid var(--line)}
+.gallery-slide{position:absolute;inset:0;opacity:0;transform:scale(1.08);transition:opacity .9s,transform 5s;background:linear-gradient(120deg,#172536,#080c11);display:flex;align-items:end}
+.gallery-slide.active{opacity:1;transform:scale(1)}
+.gallery-slide .photo-placeholder{position:absolute;inset:0;display:grid;place-items:center;color:#637181;font-size:4rem;font-family:Georgia,serif}
+.gallery-slide .caption{position:relative;z-index:2;padding:55px;max-width:650px;background:linear-gradient(transparent,rgba(0,0,0,.85));width:100%}
+.caption .num{color:var(--gold);font-size:.7rem;letter-spacing:.25em}.caption h3{font:clamp(2.2rem,5vw,4.8rem) Georgia,serif;margin:10px 0}.caption p{color:#bdc5ce;line-height:1.7}
+.gallery-controls{position:absolute;right:25px;bottom:25px;display:flex;gap:8px;z-index:3}
+.gallery-controls button{width:42px;height:42px;background:rgba(0,0,0,.55);color:#fff;border:1px solid var(--line);cursor:pointer}
+.progress{display:flex;gap:6px;margin-top:18px}.progress span{height:2px;width:35px;background:#27313c}.progress span.active{background:var(--gold)}
+.ideas{background:#080c12;overflow:hidden}.ideas-cloud{min-height:540px;margin-top:65px;position:relative;border:1px solid var(--line);display:grid;place-items:center;background:radial-gradient(circle,#121f30,transparent 45%)}
+.idea{position:absolute;color:#718092;font-size:clamp(.75rem,1.5vw,1rem);letter-spacing:.12em;text-transform:uppercase;transition:.4s;cursor:default}.idea:hover{color:var(--gold);transform:scale(1.25)!important;text-shadow:0 0 25px rgba(216,181,106,.4)}
+.idea:nth-child(1){top:12%;left:15%}.idea:nth-child(2){top:24%;left:63%}.idea:nth-child(3){top:42%;left:8%}.idea:nth-child(4){top:70%;left:20%}.idea:nth-child(5){top:75%;left:70%}.idea:nth-child(6){top:15%;left:43%}.idea:nth-child(7){top:53%;left:74%}.idea:nth-child(8){top:37%;left:42%}.idea:nth-child(9){top:83%;left:48%}.idea:nth-child(10){top:57%;left:18%}
+.idea-center{text-align:center;max-width:600px;padding:30px}.idea-center .quote{font:clamp(1.6rem,3vw,2.7rem) Georgia,serif;line-height:1.25}.idea-center small{display:block;color:var(--gold);margin-top:25px;letter-spacing:.2em}
+.india{background:#070b10}.india-map{height:570px;margin-top:55px;border:1px solid var(--line);position:relative;overflow:hidden;background:radial-gradient(circle at 50% 50%,#132031,#060a0f 70%);display:grid;place-items:center}
+.india-shape{font-size:clamp(12rem,35vw,29rem);line-height:1;font-family:Georgia,serif;color:transparent;-webkit-text-stroke:1px rgba(216,181,106,.4);text-shadow:0 0 70px rgba(216,181,106,.08);position:relative}
+.india-shape:after{content:"INDIA";position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.02);font-size:.25em;letter-spacing:.2em}
+.city{position:absolute;width:7px;height:7px;background:var(--gold);border-radius:50%;box-shadow:0 0 20px var(--gold)}.city span{position:absolute;left:14px;top:-7px;white-space:nowrap;color:#7c8896;font-size:.65rem;letter-spacing:.1em}
+.c1{top:42%;left:50%}.c2{top:35%;left:39%}.c3{top:53%;left:48%}.c4{top:65%;left:56%}
+.upsc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:60px}
+.upsc-card{min-height:230px;padding:30px;position:relative;overflow:hidden;transition:.4s}.upsc-card:before{content:"";position:absolute;width:100px;height:100px;border:1px solid rgba(216,181,106,.12);border-radius:50%;right:-35px;bottom:-35px;transition:.4s}.upsc-card:hover{transform:translateY(-8px);border-color:rgba(216,181,106,.4)}.upsc-card:hover:before{transform:scale(2)}.upsc-icon{font-size:1.7rem}.upsc-card h3{font:1.5rem Georgia,serif;margin:25px 0 10px}.upsc-card p{color:#8793a1;line-height:1.7;font-size:.9rem}
+.achievements{background:linear-gradient(180deg,#070b10,#0c1118)}.achievement-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:60px;border:1px solid var(--line)}.achievement{padding:45px 28px;background:#0a0f15;min-height:220px}.achievement strong{font:clamp(3rem,6vw,6rem) Georgia,serif;color:var(--gold);display:block}.achievement h3{font:1rem Georgia,serif;margin:10px 0}.achievement p{color:#75818f;font-size:.78rem;line-height:1.5}
+.flags-section{background:#05080d;text-align:center}.flags-cloud{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:60px auto 0;max-width:900px}.big-flag{font-size:2rem;padding:20px 28px;border:1px solid var(--line);transition:.4s;background:rgba(255,255,255,.025)}.big-flag:hover{transform:translateY(-10px) rotate(-2deg);border-color:var(--gold);box-shadow:0 20px 45px rgba(0,0,0,.3)}
+.final{min-height:85vh;display:grid;place-items:center;text-align:center;overflow:hidden;background:radial-gradient(circle at center,#14263c,#05080c 62%)}.final h2{max-width:900px;margin:auto}.final p{max-width:680px;margin:30px auto;color:#9da8b4;line-height:1.9}.motto{font-size:.75rem;letter-spacing:.5em;color:var(--gold);text-transform:uppercase}
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .9s,transform .9s}.reveal.visible{opacity:1;transform:none}
+footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
+@media(max-width:900px){
+ .nav-links{display:none}.menu{display:block}.nav.open .nav-links{display:flex;position:absolute;top:65px;left:4%;right:4%;padding:20px;flex-direction:column;align-items:flex-start;background:#080d14;border:1px solid var(--line)}
+ .world-grid,.about-grid{grid-template-columns:1fr;gap:40px}.upsc-grid{grid-template-columns:1fr 1fr}.achievement-grid{grid-template-columns:1fr 1fr}
+ .timeline{left:10px}.timeline-item,.timeline-item:nth-child(even){width:100%;margin-left:0;padding-left:45px;padding-right:0}.timeline-item:before,.timeline-item:nth-child(odd):before,.timeline-item:nth-child(even):before{left:4px;right:auto}
+}
+@media(max-width:600px){
+ .section{padding:85px 0}.hero h1{font-size:19vw}.hero-content{padding-top:80px}.mapbox{min-height:380px}.bio-highlight,.upsc-grid,.achievement-grid{grid-template-columns:1fr}.gallery-stage{height:65vh;min-height:440px}.gallery-slide .caption{padding:25px}.ideas-cloud{min-height:470px}.india-map{height:430px}.nav-inner{width:90%}
+}
+</style>
+</head>
+<body>
+<!-- ===================== EASY EDIT GUIDE =====================
+1. Change the name: search for "SHIVAM SHARMA".
+2. Add portrait: replace the .portrait-placeholder with <img src="YOUR_IMAGE.jpg" alt="Shivam Sharma">.
+3. Add gallery photos: inside each .gallery-slide, replace .photo-placeholder with an <img>.
+4. Edit captions/descriptions directly inside each gallery slide.
+5. Edit achievements in the .achievement-grid.
+6. Edit academic milestones in .timeline-wrap.
+7. Edit UPSC subjects in the .upsc-grid.
+=============================================================== -->
+
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-name">SHIVAM SHARMA</div>
+    <div class="loader-sub">POLITICAL SCIENCE · PUBLIC SERVICE · ACADEMIC EXCELLENCE</div>
+    <div class="load-line"><span></span></div>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#home">SS.</a>
+    <button class="menu" aria-label="Menu">☰</button>
+    <nav class="nav-links">
+      <a href="#home" class="active">Home</a><a href="#about">About</a><a href="#journey">Journey</a>
+      <a href="#achievements">Achievements</a><a href="#ideas">Political World</a><a href="#gallery">Gallery</a>
+      <a href="#upsc">UPSC</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <canvas id="worldCanvas"></canvas><div class="hero-overlay"></div>
+  <div class="container hero-content reveal">
+    <div class="hero-tag"><i></i> A mind engaged with the world</div>
+    <h1>SHIVAM<br>SHARMA</h1>
+    <div class="hero-role">UPSC Aspirant · Political Science Scholar · Academic Achiever</div>
+    <p class="hero-desc">Exploring politics, society, governance and the ideas that shape nations.</p>
+    <div class="hero-buttons"><a class="btn primary" href="#about">Explore My Journey →</a><a class="btn" href="#journey">Academic Journey</a><a class="btn" href="#ideas">Discover My World</a></div>
+    <div class="rotating">Currently exploring: <span id="rotatingWord">A Student of Politics</span></div>
+  </div>
+  <div class="scroll-cue">Scroll to explore</div>
+</section>
+
+<section class="section world" id="world">
+  <div class="container world-grid">
+    <div class="reveal">
+      <div class="kicker">01 / Global Perspective</div><h2>Understanding a Changing World</h2>
+      <p class="section-intro">Politics is not confined to borders. Every nation is part of a larger global conversation.</p>
+      <div class="flag-cluster">
+        <div class="flag">🇮🇳 India</div><div class="flag">🇺🇸 United States</div><div class="flag">🇬🇧 United Kingdom</div>
+        <div class="flag">🇨🇳 China</div><div class="flag">🇫🇷 France</div><div class="flag">🇯🇵 Japan</div>
+      </div>
+    </div>
+    <div class="mapbox reveal"><canvas id="miniMap"></canvas></div>
+  </div>
+</section>
+
+<section class="section" id="about">
+ <div class="container about-grid">
+  <div class="portrait reveal">
+   <!-- Replace this placeholder with Shivam's portrait -->
+   <div class="portrait-placeholder"><strong>SHIVAM</strong><span>PORTRAIT PLACEHOLDER<br>Add image here</span></div>
+  </div>
+  <div class="reveal">
+   <div class="kicker">02 / The Person Behind The Preparation</div><h2>Beyond the Books</h2>
+   <p class="section-intro bio">Shivam Sharma is a <b>UPSC aspirant</b> and <b>Political Science</b> scholar with a deep interest in politics, governance, society, international affairs and public service. A former student of <b>Allahabad University</b>, his academic journey reflects discipline, curiosity and a sustained pursuit of excellence.</p>
+   <div class="bio-highlight">
+    <div class="stat"><strong>AU</strong><span>Allahabad University</span></div><div class="stat"><strong>#1</strong><span>College Topper</span></div><div class="stat"><strong>#4</strong><span>M.A. Final Rank</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="journey">
+ <div class="container">
+  <div class="kicker">03 / Academic Journey</div><h2>A Journey of<br>Academic Excellence</h2>
+  <p class="section-intro">Milestones built through consistency, scholarship and an expanding understanding of society and public life.</p>
+  <div class="timeline-wrap">
+   <div class="timeline"></div>
+   <div class="timeline-item reveal"><div class="timeline-card glass"><div class="timeline-year">ACADEMIA</div><h3>Allahabad University</h3><p>Student of Political Science, developing a rigorous foundation in political thought, institutions, society and governance.</p></div></div>
+   <div class="timeline-item reveal"><div class="timeline-card glass"><div class="timeline-year">ACHIEVEMENT</div><h3>College Topper</h3><p>A consistent record of academic excellence, discipline and dedication.</p></div></div>
+   <div class="timeline-item reveal"><div class="timeline-card glass"><div class="timeline-year">M.A. FINAL</div><h3>4th Rank Holder</h3><p>An important academic milestone demonstrating commitment to scholarly work and Political Science.</p></div></div>
+   <div class="timeline-item reveal"><div class="timeline-card glass"><div class="timeline-year">THE NEXT CHAPTER</div><h3>UPSC Aspirant</h3><p>Continuing the journey toward public service and a deeper understanding of governance and society.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="section gallery" id="gallery">
+ <div class="container">
+  <div class="kicker">04 / Visual Journey</div><h2>Moments That<br>Shaped the Journey</h2>
+  <p class="section-intro">A cinematic space for photographs, memories and milestones. Replace the placeholders below with real photographs.</p>
+  <div class="gallery-stage">
+   <!-- Replace each .photo-placeholder with <img src="..." alt="..."> -->
+   <div class="gallery-slide active"><div class="photo-placeholder">01</div><div class="caption"><div class="num">01 / BEGINNING</div><h3>A Beginning With Ambition</h3><p>A journey shaped by curiosity, discipline and a desire to understand the world.</p></div></div>
+   <div class="gallery-slide"><div class="photo-placeholder">02</div><div class="caption"><div class="num">02 / ACADEMIA</div><h3>The Academic Journey</h3><p>Every classroom, book and discussion added another perspective.</p></div></div>
+   <div class="gallery-slide"><div class="photo-placeholder">03</div><div class="caption"><div class="num">03 / EXCELLENCE</div><h3>The Pursuit of Excellence</h3><p>Achievement is not a destination, but the result of consistent effort.</p></div></div>
+   <div class="gallery-slide"><div class="photo-placeholder">04</div><div class="caption"><div class="num">04 / POLITICAL SCIENCE</div><h3>A Student of Political Science</h3><p>Understanding power, institutions, society and the ideas that shape nations.</p></div></div>
+   <div class="gallery-slide"><div class="photo-placeholder">05</div><div class="caption"><div class="num">05 / PUBLIC SERVICE</div><h3>Looking Towards Public Service</h3><p>Preparing not only for an examination, but for a larger responsibility.</p></div></div>
+   <div class="gallery-controls"><button id="prev">←</button><button id="next">→</button></div>
+  </div>
+  <div class="progress" id="progress"><span class="active"></span><span></span><span></span><span></span><span></span></div>
+ </div>
+</section>
+
+<section class="section ideas" id="ideas">
+ <div class="container">
+  <div class="kicker">05 / Political Thought</div><h2>Ideas Shape Nations</h2>
+  <div class="ideas-cloud reveal">
+   <span class="idea">Democracy</span><span class="idea">Constitution</span><span class="idea">Governance</span><span class="idea">Justice</span><span class="idea">Liberty</span><span class="idea">Equality</span><span class="idea">Society</span><span class="idea">Power</span><span class="idea">Diplomacy</span><span class="idea">Policy</span>
+   <div class="idea-center"><div class="quote">“Politics is ultimately about people, institutions and the ideas that determine the direction of society.”</div><small>POLITICAL THOUGHT</small></div>
+  </div>
+ </div>
+</section>
+
+<section class="section india" id="india">
+ <div class="container">
+  <div class="kicker">06 / The Republic</div><h2>India: Democracy in Motion</h2>
+  <p class="section-intro">Understanding the world leads back to understanding India — its Constitution, institutions, diversity and democratic promise.</p>
+  <div class="india-map reveal">
+   <div class="india-shape">INDIA</div>
+   <div class="city c1"><span>NEW DELHI</span></div><div class="city c2"><span>JAIPUR</span></div><div class="city c3"><span>BHOPAL</span></div><div class="city c4"><span>HYDERABAD</span></div>
+  </div>
+  <div class="flag-cluster"><div class="flag">Constitution</div><div class="flag">Democracy</div><div class="flag">Federalism</div><div class="flag">Parliament</div><div class="flag">Judiciary</div><div class="flag">Governance</div></div>
+ </div>
+</section>
+
+<section class="section" id="upsc">
+ <div class="container">
+  <div class="kicker">07 / Preparing for Purpose</div><h2>The UPSC<br>Journey</h2>
+  <p class="section-intro">Connecting contemporary events with deeper political, historical and social understanding.</p>
+  <div class="upsc-grid">
+   <div class="upsc-card glass reveal"><div class="upsc-icon">📜</div><h3>Polity & Governance</h3><p>Understanding constitutional institutions and democratic governance.</p></div>
+   <div class="upsc-card glass reveal"><div class="upsc-icon">🌍</div><h3>International Relations</h3><p>Exploring India's position in an interconnected world.</p></div>
+   <div class="upsc-card glass reveal"><div class="upsc-icon">👥</div><h3>Society</h3><p>Understanding people, communities and social transformation.</p></div>
+   <div class="upsc-card glass reveal"><div class="upsc-icon">🏛️</div><h3>Political Science</h3><p>Studying political theories, institutions and ideologies.</p></div>
+   <div class="upsc-card glass reveal"><div class="upsc-icon">📖</div><h3>History</h3><p>Learning from the experiences that shaped civilizations and nations.</p></div>
+   <div class="upsc-card glass reveal"><div class="upsc-icon">📰</div><h3>Current Affairs</h3><p>Connecting contemporary events with deeper political understanding.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section achievements" id="achievements">
+ <div class="container">
+  <div class="kicker">08 / Achievement Spotlight</div><h2>Milestones,<br>Not Endpoints.</h2>
+  <div class="achievement-grid">
+   <div class="achievement reveal"><strong class="counter" data-target="4">0</strong><h3>Rank in M.A. Final</h3><p>A strong academic milestone in Political Science.</p></div>
+   <div class="achievement reveal"><strong>TOPPER</strong><h3>Academic Excellence</h3><p>Recognized for consistent academic performance.</p></div>
+   <div class="achievement reveal"><strong>PS</strong><h3>Political Science</h3><p>The discipline at the heart of the academic journey.</p></div>
+   <div class="achievement reveal"><strong>UPSC</strong><h3>A Journey Towards Public Service</h3><p>A continuing pursuit of knowledge, responsibility and purpose.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section flags-section">
+ <div class="container">
+  <div class="kicker">09 / Global Awareness</div><h2>A World of Different Systems,<br>One Shared Future</h2>
+  <p class="section-intro" style="margin-left:auto;margin-right:auto">Political systems, cultures, governments and societies differ — yet their futures remain interconnected.</p>
+  <div class="flags-cloud">
+   <div class="big-flag" title="India — parliamentary democracy">🇮🇳</div><div class="big-flag" title="United States">🇺🇸</div><div class="big-flag" title="United Kingdom">🇬🇧</div><div class="big-flag" title="China">🇨🇳</div><div class="big-flag" title="France">🇫🇷</div><div class="big-flag" title="Russia">🇷🇺</div><div class="big-flag" title="Japan">🇯🇵</div>
+  </div>
+ </div>
+</section>
+
+<section class="final section" id="contact">
+ <div class="container reveal">
+  <div class="kicker">10 / The Journey Continues</div>
+  <h2>The Journey Is Still Being Written</h2>
+  <p>From the classrooms of Allahabad University to the continuing pursuit of knowledge and public service, every achievement is only a milestone in a much larger journey.</p>
+  <div class="motto">Learn. Understand. Serve.</div>
+ </div>
+</section>
+</main>
+<footer><div class="container">© 2026 Shivam Sharma · Political Science · Public Service · Academic Excellence</div></footer>
+
+<script>
+/* ===================== INTERACTION ENGINE ===================== */
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+
+window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('done'),1850));
+
+const menu=document.querySelector('.menu');
+menu.addEventListener('click',()=>nav.classList.toggle('open'));
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+
+const revealObserver=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+
+const words=["A Student of Politics","A Student of Governance","A Student of Society","An Aspirant for Public Service","A Lifelong Learner"];
+let wi=0;
+setInterval(()=>{wi=(wi+1)%words.length;const el=document.getElementById('rotatingWord');el.style.opacity=0;setTimeout(()=>{el.textContent=words[wi];el.style.opacity=1},250)},2400);
+
+/* Hero world/capital network canvas */
+const canvas=document.getElementById('worldCanvas'),ctx=canvas.getContext('2d');
+function resizeCanvas(){canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
+resizeCanvas();addEventListener('resize',resizeCanvas);
+let mouse={x:innerWidth/2,y:innerHeight/2},pts=[];
+for(let i=0;i<32;i++)pts.push({x:innerWidth*(.1+Math.random()*.8),y:innerHeight*(.15+Math.random()*.7),r:Math.random()*2+1});
+addEventListener('mousemove',e=>mouse={x:e.clientX,y:e.clientY});
+function drawWorld(){
+ ctx.clearRect(0,0,innerWidth,innerHeight);
+ ctx.strokeStyle='rgba(150,180,210,.09)';ctx.lineWidth=1;
+ for(let x=-100;x<innerWidth+150;x+=120){ctx.beginPath();ctx.ellipse(x,innerHeight*.5,70,innerHeight*.43,0,0,Math.PI*2);ctx.stroke()}
+ for(let y=innerHeight*.15;y<innerHeight*.9;y+=75){ctx.beginPath();ctx.ellipse(innerWidth*.5,y,innerWidth*.48,45,0,0,Math.PI*2);ctx.stroke()}
+ pts.forEach((p,i)=>{
+  const dx=p.x-mouse.x,dy=p.y-mouse.y,d=Math.hypot(dx,dy);
+  const glow=Math.max(0,1-d/250);
+  ctx.fillStyle=`rgba(216,181,106,${.22+glow*.65})`;ctx.beginPath();ctx.arc(p.x,p.y,p.r+glow*2,0,Math.PI*2);ctx.fill();
+  for(let j=i+1;j<pts.length;j++){let q=pts[j],dist=Math.hypot(p.x-q.x,p.y-q.y);if(dist<230){ctx.strokeStyle=`rgba(140,170,205,${(1-dist/230)*.12})`;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}}
+ });
+ requestAnimationFrame(drawWorld);
+} drawWorld();
+
+/* Mini map network */
+const mm=document.getElementById('miniMap'),mc=mm.getContext('2d');
+function resizeMini(){mm.width=mm.clientWidth*devicePixelRatio;mm.height=mm.clientHeight*devicePixelRatio;mc.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
+resizeMini();addEventListener('resize',resizeMini);
+let mp=[];for(let i=0;i<20;i++)mp.push({x:Math.random()*700,y:Math.random()*500});
+function mini(){let w=mm.clientWidth,h=mm.clientHeight;mc.clearRect(0,0,w,h);mc.strokeStyle='rgba(130,160,190,.12)';
+for(let x=0;x<w;x+=70){mc.beginPath();mc.moveTo(x,0);mc.lineTo(x,h);mc.stroke()}for(let y=0;y<h;y+=70){mc.beginPath();mc.moveTo(0,y);mc.lineTo(w,y);mc.stroke()}
+mp.forEach((p,i)=>{p.x=Math.max(0,Math.min(w,p.x));p.y=Math.max(0,Math.min(h,p.y));mc.fillStyle='rgba(216,181,106,.7)';mc.beginPath();mc.arc(p.x,p.y,2,0,7);mc.fill();if(i){mc.strokeStyle='rgba(216,181,106,.08)';mc.beginPath();mc.moveTo(p.x,p.y);mc.lineTo(mp[i-1].x,mp[i-1].y);mc.stroke()}});requestAnimationFrame(mini)}mini();
+
+/* Gallery */
+const slides=[...document.querySelectorAll('.gallery-slide')], bars=[...document.querySelectorAll('#progress span')];let gi=0;
+function showSlide(n){gi=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('active',i===gi));bars.forEach((b,i)=>b.classList.toggle('active',i===gi))}
+document.getElementById('next').onclick=()=>showSlide(gi+1);document.getElementById('prev').onclick=()=>showSlide(gi-1);
+let auto=setInterval(()=>showSlide(gi+1),5500);
+document.querySelector('.gallery-stage').addEventListener('mouseenter',()=>clearInterval(auto));
+document.querySelector('.gallery-stage').addEventListener('mouseleave',()=>auto=setInterval(()=>showSlide(gi+1),5500));
+
+/* Gentle floating keywords */
+document.querySelectorAll('.idea').forEach((el,i)=>{el.animate([{transform:`translate(0,0)`},{transform:`translate(${i%2?8:-8}px,${i%3?7:-7}px)`},{transform:`translate(0,0)`}],{duration:3000+i*250,iterations:Infinity,easing:'ease-in-out'})});
+
+/* Achievement counter */
+const counter=document.querySelector('.counter');let counted=false;
+const counterObs=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!counted){counted=true;let n=0;const t=setInterval(()=>{n++;counter.textContent=n;if(n>=4)clearInterval(t)},180)}},{threshold:.6});counterObs.observe(counter);
+
+/* Active navigation indicator */
+const sections=[...document.querySelectorAll('main section[id]')];
+const secObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));const a=document.querySelector(`.nav-links a[href="#${e.target.id}"]`);if(a)a.classList.add('active')}}),{threshold:.45});
+sections.forEach(s=>secObs.observe(s));
+</script>
+</body>
+</html>
