@@ -357,7 +357,24 @@ h2{font-family:Georgia,serif;font-size:clamp(2.5rem,6vw,5.5rem);line-height:.95;
 .c1{top:42%;left:50%}.c2{top:35%;left:39%}.c3{top:53%;left:48%}.c4{top:65%;left:56%}
 .upsc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:60px}
 .upsc-card{min-height:230px;padding:30px;position:relative;overflow:hidden;transition:.4s}.upsc-card:before{content:"";position:absolute;width:100px;height:100px;border:1px solid rgba(216,181,106,.12);border-radius:50%;right:-35px;bottom:-35px;transition:.4s}.upsc-card:hover{transform:translateY(-8px);border-color:rgba(216,181,106,.4)}.upsc-card:hover:before{transform:scale(2)}.upsc-icon{font-size:1.7rem}.upsc-card h3{font:1.5rem Georgia,serif;margin:25px 0 10px}.upsc-card p{color:#8793a1;line-height:1.7;font-size:.9rem}
-.achievements{background:linear-gradient(180deg,#070b10,#0c1118)}.achievement-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:60px;border:1px solid var(--line)}.achievement{padding:45px 28px;background:#0a0f15;min-height:220px}.achievement strong{font:clamp(3rem,6vw,6rem) Georgia,serif;color:var(--gold);display:block}.achievement h3{font:1rem Georgia,serif;margin:10px 0}.achievement p{color:#75818f;font-size:.78rem;line-height:1.5}
+.achievements{background:linear-gradient(180deg,#070b10,#0c1118)}
+.achievement-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);margin-top:60px;border:1px solid var(--line)}
+.achievement{
+    padding:45px 30px;
+    background:#0a0f15;
+    min-height:220px;
+    min-width:0;
+    overflow:hidden;
+}
+
+.achievement strong{
+    font:clamp(1.8rem,3vw,3.2rem) Georgia,serif;
+    color:var(--gold);
+    display:block;
+    white-space:normal;
+    overflow-wrap:break-word;
+}
+.achievement h3{font:1rem Georgia,serif;margin:10px 0}.achievement p{color:#75818f;font-size:.78rem;line-height:1.5}
 .flags-section{background:#05080d;text-align:center}.flags-cloud{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:60px auto 0;max-width:900px}.big-flag{font-size:2rem;padding:20px 28px;border:1px solid var(--line);transition:.4s;background:rgba(255,255,255,.025)}.big-flag:hover{transform:translateY(-10px) rotate(-2deg);border-color:var(--gold);box-shadow:0 20px 45px rgba(0,0,0,.3)}
 .final{min-height:85vh;display:grid;place-items:center;text-align:center;overflow:hidden;background:radial-gradient(circle at center,#14263c,#05080c 62%)}.final h2{max-width:900px;margin:auto}.final p{max-width:680px;margin:30px auto;color:#9da8b4;line-height:1.9}.motto{font-size:.75rem;letter-spacing:.5em;color:var(--gold);text-transform:uppercase}
 .reveal{opacity:0;transform:translateY(35px);transition:opacity .9s,transform .9s}.reveal.visible{opacity:1;transform:none}
@@ -594,6 +611,133 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
     display:none;
 }
 
+/* ===== SMALL MOMENTS STORY GALLERY ===== */
+
+.moment-gallery{
+    margin-top:30px;
+}
+
+.moment-feature{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:#080d14;
+}
+
+.moment-feature img{
+    width:100%;
+    height:360px;
+    object-fit:cover;
+    display:block;
+}
+
+.moment-caption{
+    padding:18px 20px;
+    border-top:1px solid var(--line);
+}
+
+.moment-caption span{
+    color:var(--gold);
+    font-size:.65rem;
+    letter-spacing:.18em;
+}
+
+.moment-caption p{
+    margin:8px 0 0;
+    color:#aab4c0;
+    font-size:.85rem;
+    line-height:1.6;
+}
+
+.moment-thumbnails{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:8px;
+    margin-top:10px;
+}
+
+.moment-thumb{
+    width:100%;
+    height:65px;
+    object-fit:cover;
+    opacity:.5;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:.3s ease;
+}
+
+.moment-thumb:hover,
+.moment-thumb.active{
+    opacity:1;
+    border-color:var(--gold);
+}
+
+@media(max-width:600px){
+
+    .moment-feature img{
+        height:250px;
+    }
+
+    .moment-thumbnails{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .moment-thumb{
+        height:70px;
+    }
+
+}
+
+/* ===== SMALL MOMENTS GALLERY — FINAL LAYOUT ===== */
+
+#momentGallery {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+}
+
+#momentGallery .moment-feature {
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+#momentGallery .moment-feature img {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+}
+
+#momentGallery .moment-caption {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#momentGallery .moment-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin-top: 12px;
+}
+
+#momentGallery .moment-thumb {
+    display: block;
+    width: 100%;
+    height: 75px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: .55;
+}
+
+#momentGallery .moment-thumb:hover,
+#momentGallery .moment-thumb.active {
+    opacity: 1;
+    border: 1px solid var(--gold);
+}
+
 </style>
 
 <link rel="stylesheet"
@@ -625,7 +769,7 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
     <button class="menu" aria-label="Menu">☰</button>
     <nav class="nav-links">
       <a href="#home" class="active">Home</a><a href="#about">About</a><a href="#journey">Journey</a>
-      <a href="#achievements">Achievements</a><a href="#ideas">Political World</a><a href="#gallery">Gallery</a>
+      <a href="#achievements">MILESTONES ALONG THE WAY</a><a href="#ideas">Political World</a><a href="#gallery">Gallery</a>
       <a href="#upsc">UPPSC</a><a href="#contact">Contact</a>
     </nav>
   </div>
@@ -763,9 +907,9 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
 </div>
   <div class="reveal">
    <div class="kicker">02 / The Person Behind The Preparation</div><h2>Beyond the Books</h2>
-   <p class="section-intro bio">Shivam Sharma is a <b>UPPSC aspirant</b> and <b>Political Science</b> scholar with a deep interest in politics, governance, society, international affairs and public service. A former student of <b>Allahabad University</b>, his academic journey reflects discipline, curiosity and a sustained pursuit of excellence.</p>
+   <p class="section-intro bio"> A <b>UPPSC aspirant</b> and <b>Political Science</b> scholar with a deep interest in politics, governance, society, international affairs and public service. A former student of <b>Allahabad University</b>, his academic journey reflects discipline, curiosity and a sustained pursuit of excellence.</p>
    <div class="bio-highlight">
-    <div class="stat"><strong>AU</strong><span>Allahabad University</span></div><div class="stat"><strong>#1</strong><span>College Topper</span></div><div class="stat"><strong>#4</strong><span>M.A. Final Rank</span></div>
+    <div class="stat"><strong>AU</strong><span>Allahabad University</span></div><div class="stat"><strong>PS</strong><span>POLITICAL SCIENCE</span></div><div class="stat"><strong>MILESTONE</strong><span>M.A. Final</span></div>
    </div>
   </div>
  </div>
@@ -773,16 +917,62 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
 
 <section class="section" id="journey">
  <div class="container">
-  <div class="kicker">03 / Academic Journey</div><h2>A Journey of<br>Academic Excellence</h2>
-  <p class="section-intro">Milestones built through consistency, scholarship and an expanding understanding of society and public life.</p>
-  <div class="timeline-wrap">
-   <div class="timeline"></div>
-   <div class="timeline-item reveal"><div class="timeline-card glass"><div class="timeline-year">ACADEMIA</div><h3>Allahabad University</h3><p>Student of Political Science, developing a rigorous foundation in political thought, institutions, society and governance.</p></div></div>
-   <div class="timeline-item reveal"><div class="timeline-card glass"><div class="timeline-year">ACHIEVEMENT</div><h3>College Topper</h3><p>A consistent record of academic excellence, discipline and dedication.</p></div></div>
-   <div class="timeline-item reveal"><div class="timeline-card glass"><div class="timeline-year">M.A. FINAL</div><h3>4th Rank Holder</h3><p>An important academic milestone demonstrating commitment to scholarly work and Political Science.</p></div></div>
-   <div class="timeline-item reveal"><div class="timeline-card glass"><div class="timeline-year">THE NEXT CHAPTER</div><h3>UPPSC Aspirant</h3><p>Continuing the journey toward public service and a deeper understanding of governance and society.</p></div></div>
-  </div>
- </div>
+  <div class="kicker">03 / Academic Journey</div><h2>A Journey of<br>Becoming</h2>
+  <p class="section-intro">
+    Not a list of achievements, but a story of how curiosity slowly became discipline,
+    discipline became understanding, and understanding became purpose.
+</p>
+<div class="timeline-wrap">
+
+    <div class="timeline"></div>
+
+    <div class="timeline-item reveal">
+        <div class="timeline-card glass">
+            <div class="timeline-year">THE BEGINNING</div>
+            <h3>Curiosity Came First</h3>
+            <p>
+                The journey began with a simple curiosity about people,
+                society and the way the world around us works.
+            </p>
+        </div>
+    </div>
+
+    <div class="timeline-item reveal">
+        <div class="timeline-card glass">
+            <div class="timeline-year">ALLAHABAD UNIVERSITY</div>
+            <h3>Learning to Question</h3>
+            <p>
+                Studying Political Science opened a deeper world of ideas,
+                institutions, history and different ways of understanding society.
+            </p>
+        </div>
+    </div>
+
+    <div class="timeline-item reveal">
+        <div class="timeline-card glass">
+            <div class="timeline-year">A MILESTONE</div>
+            <h3>When Effort Became Recognition</h3>
+            <p>
+                Academic achievements, including a 4th rank in M.A. Final,
+                became milestones along the way — not the destination.
+            </p>
+        </div>
+    </div>
+
+    <div class="timeline-item reveal">
+        <div class="timeline-card glass">
+            <div class="timeline-year">THE NEXT CHAPTER</div>
+            <h3>From Learning to Purpose</h3>
+            <p>
+                The journey continues toward public service, with a growing
+                interest in governance, society and understanding people.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+
 </section>
 
 <section class="section gallery" id="gallery">
@@ -904,13 +1094,31 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
 
 <section class="section achievements" id="achievements">
  <div class="container">
-  <div class="kicker">08 / Achievement Spotlight</div><h2>Milestones,<br>Not Endpoints.</h2>
+  <div class="kicker">08 / MILESTONES ALONG THE WAY</div>
   <div class="achievement-grid">
-   <div class="achievement reveal"><strong class="counter" data-target="4">0</strong><h3>Rank in M.A. Final</h3><p>A strong academic milestone in Political Science.</p></div>
-   <div class="achievement reveal"><strong>TOPPER</strong><h3>Academic Excellence</h3><p>Recognized for consistent academic performance.</p></div>
-   <div class="achievement reveal"><strong>PS</strong><h3>Political Science</h3><p>The discipline at the heart of the academic journey.</p></div>
-   <div class="achievement reveal"><strong>UPPSC</strong><h3>A Journey Towards Public Service</h3><p>A continuing pursuit of knowledge, responsibility and purpose.</p></div>
-  </div>
+   <div class="achievement reveal">
+    <strong>BEGINNING</strong>
+    <h3>Discovering Political Science</h3>
+    <p>A growing curiosity about politics, society and the ideas that shape the world.</p>
+</div>
+
+<div class="achievement reveal">
+    <strong>GROWTH</strong>
+    <h3>Learning Through University</h3>
+    <p>Years of study, discipline and conversations that gradually shaped a deeper understanding of society and public life.</p>
+</div>
+
+<div class="achievement reveal">
+    <strong>INSIGHT</strong>
+    <h3>Understanding Society & Politics</h3>
+    <p>Learning to look beyond textbooks and understand different perspectives, institutions and people.</p>
+</div>
+
+<div class="achievement reveal">
+    <strong>PURPOSE</strong>
+    <h3>A Journey Towards Public Service</h3>
+    <p>Carrying that curiosity forward with a deeper sense of responsibility, knowledge and purpose.</p>
+</div>
  </div>
 </section>
 
@@ -1191,18 +1399,58 @@ sections.forEach(s=>secObs.observe(s));
 
         <div class="moment-gallery" id="momentGallery">
 
-    <img src="pic/moments/moment-01.jpg" alt="A personal moment">
-    <img src="pic/moments/moment-02.jpg" alt="A personal moment">
-    <img src="pic/moments/moment-03.jpg" alt="A personal moment">
-    <img src="pic/moments/moment-04.jpg" alt="A personal moment">
-    <img src="pic/moments/moment-05.jpg" alt="A personal moment">
-    <img src="pic/moments/moment-06.jpg" alt="A personal moment">
+   <div class="moment-feature">
+
+    <img id="featuredMoment"
+         src="pic/moments/moment-01.png"
+         alt="Personal moment">
+
+    <div class="moment-caption">
+        <span id="momentLabel">A MOMENT TO REMEMBER</span>
+
+        <p id="momentDescription">
+            Some memories don't need a special occasion.
+            They simply become special with time.
+        </p>
+    </div>
+
+</div>
+
+<div class="moment-thumbnails">
+
+    <img src="pic/moments/moment-01.png"
+         onclick="changeMoment(0)"
+         class="moment-thumb active">
+
+    <img src="pic/moments/moment-02.png"
+         onclick="changeMoment(1)"
+         class="moment-thumb">
+
+    <img src="pic/moments/moment-03.png"
+         onclick="changeMoment(2)"
+         class="moment-thumb">
+
+    <img src="pic/moments/moment-04.png"
+         onclick="changeMoment(3)"
+         class="moment-thumb">
+
+    <img src="pic/moments/moment-05.png"
+         onclick="changeMoment(4)"
+         class="moment-thumb">
+
+    <img src="pic/moments/moment-06.png"
+         onclick="changeMoment(5)"
+         class="moment-thumb">
+
+</div>
 
 </div>
 
     </div>
 
 </div>
+
+
 
 <script>
 
@@ -1217,26 +1465,26 @@ function openBeyond(type){
     // Hide gallery by default
     gallery.style.display = "none";
 
-    if(type === "reading"){
-        number.innerText = "01 / READING";
-        title.innerText = "What I'm Reading";
-        text.innerText =
-        "Books, ideas and perspectives that keep me curious.";
-    }
+   if(type === "reading"){
+    number.innerText = "01 / READING";
+    title.innerText = "What I'm Reading";
+    text.innerText =
+    "From political thought and history to contemporary affairs, I enjoy reading things that challenge the way I see the world. Some books give answers; the ones I value most usually leave me with better questions.";
+}
 
-    if(type === "people"){
-        number.innerText = "02 / PEOPLE";
-        title.innerText = "People Who Inspire Me";
-        text.innerText =
-        "The people, conversations and experiences that continue to shape the way I think.";
-    }
+   if(type === "people"){
+    number.innerText = "02 / PEOPLE";
+    title.innerText = "People Who Inspire Me";
+    text.innerText =
+    "Teachers, friends, family and people I have met along the way have each left something behind — an idea, a lesson, a conversation or simply a different way of looking at things.";
+}
 
-    if(type === "learning"){
-        number.innerText = "03 / LEARNING";
-        title.innerText = "Things I'm Learning";
-        text.innerText =
-        "Understanding people, listening better and questioning my assumptions.";
-    }
+   if(type === "learning"){
+    number.innerText = "03 / LEARNING";
+    title.innerText = "Things I'm Learning";
+    text.innerText =
+    "Not everything I am learning comes from a classroom. I'm learning to listen before responding, understand perspectives I don't always agree with, stay curious when the answer isn't obvious, and accept that changing your mind can also be a form of growth.";
+}
 
     if(type === "moments"){
         number.innerText = "04 / MOMENTS";
@@ -1245,7 +1493,7 @@ function openBeyond(type){
         "The ordinary moments that often become the most memorable ones.";
 
         // Show photographs only for Small Moments
-        gallery.style.display = "grid";
+        gallery.style.display = "block";
     }
 
     popup.classList.add("active");
@@ -1271,6 +1519,56 @@ document
 
     });
 
+function changeMoment(index) {
+
+    const featured = document.getElementById("featuredMoment");
+    const label = document.getElementById("momentLabel");
+    const description = document.getElementById("momentDescription");
+    const thumbnails = document.querySelectorAll(".moment-thumb");
+
+    const moments = [
+        {
+            image: "pic/moments/moment-01.png",
+            label: "A MOMENT TO REMEMBER",
+            description: "Some memories don't need a special occasion. They simply become special with time."
+        },
+        {
+            image: "pic/moments/moment-02.png",
+            label: "PLACES & MEMORIES",
+            description: "Places become meaningful because of the moments we carry back with us."
+        },
+        {
+            image: "pic/moments/moment-03.png",
+            label: "A DAY IN THE JOURNEY",
+            description: "Not every important moment looks important when it is happening."
+        },
+        {
+            image: "pic/moments/moment-04.png",
+            label: "ORDINARY DAYS",
+            description: "Some of the best memories are simply ordinary days that we happened to remember."
+        },
+        {
+            image: "pic/moments/moment-05.png",
+            label: "PEOPLE & MOMENTS",
+            description: "The people around us often become an important part of the stories we tell later."
+        },
+        {
+            image: "pic/moments/moment-06.png",
+            label: "STILL MOVING FORWARD",
+            description: "The journey continues — with new places, new people and new things to learn."
+        }
+    ];
+
+    featured.src = moments[index].image;
+    label.innerText = moments[index].label;
+    description.innerText = moments[index].description;
+
+    thumbnails.forEach(function(thumb) {
+        thumb.classList.remove("active");
+    });
+
+    thumbnails[index].classList.add("active");
+}
 </script>
 
 </body>
