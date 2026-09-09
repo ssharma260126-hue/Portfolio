@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#07111f">
-<title>Shivam Sharma — Political Science Scholar & UPSC Aspirant</title>
+<title>Shivam Sharma — Political Science Scholar & UPPSC Aspirant</title>
 <style>
 :root{
   --navy:#07111f; --charcoal:#0b0f14; --ivory:#f5f0e6;
@@ -17,7 +17,11 @@ body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",san
 body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1000;background:radial-gradient(circle at 20% 20%,rgba(216,181,106,.04),transparent 30%),radial-gradient(circle at 80% 60%,rgba(20,90,160,.06),transparent 35%);mix-blend-mode:screen}
 a{text-decoration:none;color:inherit}
 button{font:inherit}
-.container{width:min(1180px,92%);margin:auto}
+.container{
+    width:92%;
+    max-width:1500px;
+    margin:auto;
+}
 .section{padding:120px 0;position:relative}
 .kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
 h2{font-family:Georgia,serif;font-size:clamp(2.5rem,6vw,5.5rem);line-height:.95;font-weight:500;letter-spacing:-.045em}
@@ -41,16 +45,94 @@ h2{font-family:Georgia,serif;font-size:clamp(2.5rem,6vw,5.5rem);line-height:.95;
 .nav-links a:hover:after,.nav-links a.active:after{width:100%}
 .menu{display:none;background:none;border:0;color:white;font-size:1.4rem}
 .hero{min-height:100svh;position:relative;display:grid;align-items:center;overflow:hidden;background:radial-gradient(circle at 50% 50%,#11243b 0,#07111f 42%,#05080d 100%)}
-#worldCanvas{position:absolute;inset:0;width:100%;height:100%;opacity:.82}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,8,13,.92) 0%,rgba(4,8,13,.54) 47%,rgba(4,8,13,.16) 100%)}
-.hero-content{position:relative;z-index:2;padding-top:80px}
+#worldCanvas{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    opacity:1;
+    pointer-events:none;
+}
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4,8,13,.45) 0%,
+            rgba(4,8,13,.18) 45%,
+            rgba(4,8,13,.02) 75%
+        ),
+        radial-gradient(
+            circle at 78% 48%,
+            rgba(20,55,90,.20),
+            transparent 45%
+        );
+}
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding-top:80px;
+    padding-left:0;
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    width: 85%;
+    height:95%;
+    right:0%;
+    top:5%;
+    background:url("pic/world-map.png") center/contain no-repeat;
+    opacity:.28;
+    pointer-events:none;
+}
+
+
 .hero-tag{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);padding:9px 13px;border-radius:100px;background:rgba(255,255,255,.03);color:#c7d0da;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
 .hero-tag i{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 15px var(--gold)}
-.hero h1{font-family:Georgia,serif;font-size:clamp(4rem,11vw,10.5rem);line-height:.78;letter-spacing:-.065em;font-weight:500;margin:28px 0}
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:clamp(5rem,10vw,10.5rem);
+    line-height:.78;
+    letter-spacing:-.065em;
+    font-weight:500;
+    margin:28px 0;
+}
 .hero-role{font-size:clamp(1rem,2vw,1.35rem);color:#d5dbe2;letter-spacing:.04em}
-.hero-desc{max-width:610px;color:#9ca8b5;line-height:1.8;margin:22px 0 30px;font-size:1rem}
+.hero-desc{
+    max-width:620px;
+    color:#b2bbc5;
+    line-height:1.8;
+    margin:22px 0 30px;
+    font-size:1rem;
+}
 .hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
-.btn{padding:14px 20px;border:1px solid var(--line);border-radius:2px;background:rgba(255,255,255,.04);color:#fff;cursor:pointer;transition:.3s;font-size:.76rem;letter-spacing:.13em;text-transform:uppercase}
+.btn{
+    padding:15px 22px;
+    border:1px solid rgba(245,240,230,.18);
+    border-radius:2px;
+    background:rgba(255,255,255,.025);
+    color:#fff;
+    cursor:pointer;
+    transition:.35s ease;
+    font-size:.72rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    backdrop-filter:blur(8px);
+}
+
+.btn.primary{
+    background:var(--gold);
+    border-color:var(--gold);
+    color:#101010;
+    box-shadow:0 12px 35px rgba(216,181,106,.12);
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 45px rgba(0,0,0,.35);
+}
 .btn.primary{background:var(--gold);border-color:var(--gold);color:#101010}
 .btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(0,0,0,.3)}
 .rotating{margin-top:45px;color:#8e9aaa;font-family:Georgia,serif;font-size:1.2rem}
@@ -62,11 +144,170 @@ h2{font-family:Georgia,serif;font-size:clamp(2.5rem,6vw,5.5rem);line-height:.95;
 .world{background:#060b12;overflow:hidden}
 .world-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:center}
 .mapbox{min-height:500px;position:relative;border:1px solid var(--line);overflow:hidden;background:radial-gradient(circle at center,#102237,#05090f 65%)}
+
+.country-info{
+    position:absolute;
+    inset:0;
+    padding:45px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.country-header{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.country-flag{
+    width:120px;
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.country-flag img{
+    width:110px;
+    height:70px;
+    object-fit:contain;
+    display:block;
+    filter:drop-shadow(0 8px 20px rgba(0,0,0,.35));
+}
+
+.country-code{
+    color:var(--gold);
+    font-size:.65rem;
+    letter-spacing:.3em;
+    margin-bottom:6px;
+}
+
+.country-header h3{
+    font:clamp(2rem,4vw,3.4rem) Georgia,serif;
+    margin:0 0 6px;
+    color:var(--ivory);
+}
+
+.country-header span{
+    color:#8d99a7;
+    font-size:.85rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.coordinates{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-top:35px;
+}
+
+.coordinates div{
+    border:1px solid var(--line);
+    padding:18px;
+    background:rgba(255,255,255,.025);
+}
+
+.coordinates span,
+.info-item span{
+    display:block;
+    color:#687686;
+    font-size:.58rem;
+    letter-spacing:.2em;
+    margin-bottom:8px;
+}
+
+.coordinates strong{
+    color:#d7dde4;
+    font-size:.95rem;
+    letter-spacing:.05em;
+}
+
+.political-info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-top:20px;
+}
+
+.info-item{
+    background:#0a1018;
+    padding:18px;
+}
+
+.info-item strong{
+    color:#c4ccd5;
+    font-size:.8rem;
+    font-weight:500;
+}
+
+.map-footer{
+    display:flex;
+    justify-content:space-between;
+    color:#657383;
+    font-size:.58rem;
+    letter-spacing:.2em;
+}
+
+#region{
+    color:var(--gold);
+}
+
+
 .mapbox:before{content:"LAT 23.2599° N  /  LONG 77.4126° E";position:absolute;top:18px;left:18px;color:#667585;font-size:.6rem;letter-spacing:.18em;z-index:2}
 .mapbox:after{content:"GLOBAL POLITICAL FIELD";position:absolute;bottom:18px;right:18px;color:#667585;font-size:.58rem;letter-spacing:.2em}
 #miniMap{position:absolute;inset:0;width:100%;height:100%}
 .flag-cluster{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
 .flag{padding:10px 13px;border:1px solid var(--line);background:var(--glass);font-size:.75rem;transition:.3s}
+
+.country-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#d5dbe2;
+    cursor:pointer;
+    font-family:inherit;
+}
+
+.country-btn img{
+    width:28px;
+    height:18px;
+    object-fit:cover;
+    display:block;
+}
+
+.country-btn.active{
+    border-color:var(--gold);
+    color:var(--gold);
+}
+
+.country-btn:hover{
+    border-color:var(--gold);
+    color:var(--gold);
+    transform:translateY(-4px);
+}
+
+.country-btn{
+    color:#d5dbe2;
+    cursor:pointer;
+    font-family:inherit;
+}
+
+.country-btn.active{
+    border-color:var(--gold);
+    color:var(--gold);
+    box-shadow:0 0 25px rgba(216,181,106,.08);
+}
+
+.country-btn:hover{
+    border-color:var(--gold);
+    color:var(--gold);
+    transform:translateY(-4px);
+}
+
 .flag:hover{border-color:var(--gold);transform:translateY(-5px)}
 .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:center}
 .portrait{aspect-ratio:4/5;border:1px solid var(--line);position:relative;overflow:hidden;background:linear-gradient(135deg,#172334,#070b10);display:grid;place-items:center}
@@ -146,7 +387,7 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
     <nav class="nav-links">
       <a href="#home" class="active">Home</a><a href="#about">About</a><a href="#journey">Journey</a>
       <a href="#achievements">Achievements</a><a href="#ideas">Political World</a><a href="#gallery">Gallery</a>
-      <a href="#upsc">UPSC</a><a href="#contact">Contact</a>
+      <a href="#upsc">UPPSC</a><a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -171,11 +412,108 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
       <div class="kicker">01 / Global Perspective</div><h2>Understanding a Changing World</h2>
       <p class="section-intro">Politics is not confined to borders. Every nation is part of a larger global conversation.</p>
       <div class="flag-cluster">
-        <div class="flag">🇮🇳 India</div><div class="flag">🇺🇸 United States</div><div class="flag">🇬🇧 United Kingdom</div>
-        <div class="flag">🇨🇳 China</div><div class="flag">🇫🇷 France</div><div class="flag">🇯🇵 Japan</div>
-      </div>
+
+    <button class="flag country-btn active" data-country="india">
+        <img src="pic/flags/india.png" alt="India">
+        India
+    </button>
+
+    <button class="flag country-btn" data-country="russia">
+    <img src="pic/flags/russia.png" alt="Russia">
+    Russia
+</button>
+
+    <button class="flag country-btn" data-country="usa">
+        <img src="pic/flags/usa.png" alt="United States">
+        United States
+    </button>
+
+    <button class="flag country-btn" data-country="uk">
+        <img src="pic/flags/uk.png" alt="United Kingdom">
+        United Kingdom
+    </button>
+
+    <button class="flag country-btn" data-country="china">
+        <img src="pic/flags/china.png" alt="China">
+        China
+    </button>
+
+    <button class="flag country-btn" data-country="france">
+        <img src="pic/flags/france.png" alt="France">
+        France
+    </button>
+
+    <button class="flag country-btn" data-country="japan">
+        <img src="pic/flags/japan.png" alt="Japan">
+        Japan
+    </button>
+
+</div>
     </div>
-    <div class="mapbox reveal"><canvas id="miniMap"></canvas></div>
+    <div class="mapbox reveal">
+
+    <div class="country-info">
+
+        <div class="country-header">
+
+            <div class="country-flag">
+    <img id="countryFlag" src="pic/flags/india.png" alt="India flag">
+</div>
+
+            <div>
+                <div class="country-code" id="countryCode">IND</div>
+                <h3 id="countryName">India</h3>
+                <span id="countryCapital">New Delhi</span>
+            </div>
+
+        </div>
+
+        <div class="coordinates">
+
+            <div>
+                <span>LATITUDE</span>
+                <strong id="latitude">28.6139° N</strong>
+            </div>
+
+            <div>
+                <span>LONGITUDE</span>
+                <strong id="longitude">77.2090° E</strong>
+            </div>
+
+        </div>
+
+        <div class="political-info">
+
+            <div class="info-item">
+                <span>POLITICAL SYSTEM</span>
+                <strong id="system">Parliamentary Democracy</strong>
+            </div>
+
+            <div class="info-item">
+                <span>STATE STRUCTURE</span>
+                <strong id="structure">Federal Republic</strong>
+            </div>
+
+            <div class="info-item">
+                <span>LEGISLATURE</span>
+                <strong id="legislature">Bicameral Parliament</strong>
+            </div>
+
+            <div class="info-item">
+                <span>HEAD OF GOVERNMENT</span>
+                <strong id="government">Prime Minister</strong>
+            </div>
+
+        </div>
+
+        <div class="map-footer">
+            <span id="region">SOUTH ASIA</span>
+            <span>GLOBAL POLITICAL FIELD</span>
+        </div>
+
+    </div>
+
+</div>
   </div>
 </section>
 
@@ -186,7 +524,7 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
 </div>
   <div class="reveal">
    <div class="kicker">02 / The Person Behind The Preparation</div><h2>Beyond the Books</h2>
-   <p class="section-intro bio">Shivam Sharma is a <b>UPSC aspirant</b> and <b>Political Science</b> scholar with a deep interest in politics, governance, society, international affairs and public service. A former student of <b>Allahabad University</b>, his academic journey reflects discipline, curiosity and a sustained pursuit of excellence.</p>
+   <p class="section-intro bio">Shivam Sharma is a <b>UPPSC aspirant</b> and <b>Political Science</b> scholar with a deep interest in politics, governance, society, international affairs and public service. A former student of <b>Allahabad University</b>, his academic journey reflects discipline, curiosity and a sustained pursuit of excellence.</p>
    <div class="bio-highlight">
     <div class="stat"><strong>AU</strong><span>Allahabad University</span></div><div class="stat"><strong>#1</strong><span>College Topper</span></div><div class="stat"><strong>#4</strong><span>M.A. Final Rank</span></div>
    </div>
@@ -203,7 +541,7 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
    <div class="timeline-item reveal"><div class="timeline-card glass"><div class="timeline-year">ACADEMIA</div><h3>Allahabad University</h3><p>Student of Political Science, developing a rigorous foundation in political thought, institutions, society and governance.</p></div></div>
    <div class="timeline-item reveal"><div class="timeline-card glass"><div class="timeline-year">ACHIEVEMENT</div><h3>College Topper</h3><p>A consistent record of academic excellence, discipline and dedication.</p></div></div>
    <div class="timeline-item reveal"><div class="timeline-card glass"><div class="timeline-year">M.A. FINAL</div><h3>4th Rank Holder</h3><p>An important academic milestone demonstrating commitment to scholarly work and Political Science.</p></div></div>
-   <div class="timeline-item reveal"><div class="timeline-card glass"><div class="timeline-year">THE NEXT CHAPTER</div><h3>UPSC Aspirant</h3><p>Continuing the journey toward public service and a deeper understanding of governance and society.</p></div></div>
+   <div class="timeline-item reveal"><div class="timeline-card glass"><div class="timeline-year">THE NEXT CHAPTER</div><h3>UPPSC Aspirant</h3><p>Continuing the journey toward public service and a deeper understanding of governance and society.</p></div></div>
   </div>
  </div>
 </section>
@@ -249,7 +587,7 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
 
 <section class="section" id="upsc">
  <div class="container">
-  <div class="kicker">07 / Preparing for Purpose</div><h2>The UPSC<br>Journey</h2>
+  <div class="kicker">07 / Preparing for Purpose</div><h2>The UPPSC<br>Journey</h2>
   <p class="section-intro">Connecting contemporary events with deeper political, historical and social understanding.</p>
   <div class="upsc-grid">
    <div class="upsc-card glass reveal"><div class="upsc-icon">📜</div><h3>Polity & Governance</h3><p>Understanding constitutional institutions and democratic governance.</p></div>
@@ -269,7 +607,7 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
    <div class="achievement reveal"><strong class="counter" data-target="4">0</strong><h3>Rank in M.A. Final</h3><p>A strong academic milestone in Political Science.</p></div>
    <div class="achievement reveal"><strong>TOPPER</strong><h3>Academic Excellence</h3><p>Recognized for consistent academic performance.</p></div>
    <div class="achievement reveal"><strong>PS</strong><h3>Political Science</h3><p>The discipline at the heart of the academic journey.</p></div>
-   <div class="achievement reveal"><strong>UPSC</strong><h3>A Journey Towards Public Service</h3><p>A continuing pursuit of knowledge, responsibility and purpose.</p></div>
+   <div class="achievement reveal"><strong>UPPSC</strong><h3>A Journey Towards Public Service</h3><p>A continuing pursuit of knowledge, responsibility and purpose.</p></div>
   </div>
  </div>
 </section>
@@ -320,30 +658,186 @@ const canvas=document.getElementById('worldCanvas'),ctx=canvas.getContext('2d');
 function resizeCanvas(){canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
 resizeCanvas();addEventListener('resize',resizeCanvas);
 let mouse={x:innerWidth/2,y:innerHeight/2},pts=[];
-for(let i=0;i<32;i++)pts.push({x:innerWidth*(.1+Math.random()*.8),y:innerHeight*(.15+Math.random()*.7),r:Math.random()*2+1});
+for(let i=0;i<42;i++)
+    pts.push({
+        x:innerWidth*(.48+Math.random()*.48),
+        y:innerHeight*(.10+Math.random()*.80),
+        r:Math.random()*2+1
+    });
 addEventListener('mousemove',e=>mouse={x:e.clientX,y:e.clientY});
 function drawWorld(){
  ctx.clearRect(0,0,innerWidth,innerHeight);
- ctx.strokeStyle='rgba(150,180,210,.09)';ctx.lineWidth=1;
+ ctx.strokeStyle='rgba(150,180,210,.13)';
  for(let x=-100;x<innerWidth+150;x+=120){ctx.beginPath();ctx.ellipse(x,innerHeight*.5,70,innerHeight*.43,0,0,Math.PI*2);ctx.stroke()}
  for(let y=innerHeight*.15;y<innerHeight*.9;y+=75){ctx.beginPath();ctx.ellipse(innerWidth*.5,y,innerWidth*.48,45,0,0,Math.PI*2);ctx.stroke()}
  pts.forEach((p,i)=>{
   const dx=p.x-mouse.x,dy=p.y-mouse.y,d=Math.hypot(dx,dy);
   const glow=Math.max(0,1-d/250);
-  ctx.fillStyle=`rgba(216,181,106,${.22+glow*.65})`;ctx.beginPath();ctx.arc(p.x,p.y,p.r+glow*2,0,Math.PI*2);ctx.fill();
+ctx.fillStyle=`rgba(216,181,106,${.35+glow*.65})`;ctx.beginPath();ctx.arc(p.x,p.y,p.r+glow*2,0,Math.PI*2);ctx.fill();
   for(let j=i+1;j<pts.length;j++){let q=pts[j],dist=Math.hypot(p.x-q.x,p.y-q.y);if(dist<230){ctx.strokeStyle=`rgba(140,170,205,${(1-dist/230)*.12})`;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}}
  });
  requestAnimationFrame(drawWorld);
 } drawWorld();
 
-/* Mini map network */
-const mm=document.getElementById('miniMap'),mc=mm.getContext('2d');
-function resizeMini(){mm.width=mm.clientWidth*devicePixelRatio;mm.height=mm.clientHeight*devicePixelRatio;mc.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
-resizeMini();addEventListener('resize',resizeMini);
-let mp=[];for(let i=0;i<20;i++)mp.push({x:Math.random()*700,y:Math.random()*500});
-function mini(){let w=mm.clientWidth,h=mm.clientHeight;mc.clearRect(0,0,w,h);mc.strokeStyle='rgba(130,160,190,.12)';
-for(let x=0;x<w;x+=70){mc.beginPath();mc.moveTo(x,0);mc.lineTo(x,h);mc.stroke()}for(let y=0;y<h;y+=70){mc.beginPath();mc.moveTo(0,y);mc.lineTo(w,y);mc.stroke()}
-mp.forEach((p,i)=>{p.x=Math.max(0,Math.min(w,p.x));p.y=Math.max(0,Math.min(h,p.y));mc.fillStyle='rgba(216,181,106,.7)';mc.beginPath();mc.arc(p.x,p.y,2,0,7);mc.fill();if(i){mc.strokeStyle='rgba(216,181,106,.08)';mc.beginPath();mc.moveTo(p.x,p.y);mc.lineTo(mp[i-1].x,mp[i-1].y);mc.stroke()}});requestAnimationFrame(mini)}mini();
+/* ================= COUNTRY POLITICAL DATABASE ================= */
+
+const countries = {
+
+    india:{
+        flag:"pic/flags/india.png",
+        code:"IND",
+        name:"India",
+        capital:"New Delhi",
+        latitude:"28.6139° N",
+        longitude:"77.2090° E",
+        system:"Parliamentary Democracy",
+        structure:"Federal Republic",
+        legislature:"Bicameral Parliament",
+        government:"Prime Minister",
+        region:"SOUTH ASIA"
+    },
+
+    russia:{
+        flag:"pic/flags/russia.png",
+        code:"RUS",
+        name:"Russia",
+        capital:"Moscow",
+        latitude:"55.7558° N",
+        longitude:"37.6173° E",
+        system:"Federal Semi-Presidential Republic",
+        structure:"Federal State",
+        legislature:"Bicameral Federal Assembly",
+        government:"President / Prime Minister",
+        region:"EASTERN EUROPE / NORTHERN ASIA"
+    },
+
+    usa:{
+        flag:"pic/flags/usa.png",
+        code:"USA",
+        name:"United States",
+        capital:"Washington, D.C.",
+        latitude:"38.9072° N",
+        longitude:"77.0369° W",
+        system:"Presidential Democracy",
+        structure:"Federal Republic",
+        legislature:"Bicameral Congress",
+        government:"President",
+        region:"NORTH AMERICA"
+    },
+
+    uk:{
+        flag:"pic/flags/uk.png",
+        code:"GBR",
+        name:"United Kingdom",
+        capital:"London",
+        latitude:"51.5074° N",
+        longitude:"0.1278° W",
+        system:"Parliamentary Democracy",
+        structure:"Constitutional Monarchy",
+        legislature:"Bicameral Parliament",
+        government:"Prime Minister",
+        region:"EUROPE"
+    },
+
+    china:{
+        flag:"pic/flags/china.png",
+        code:"CHN",
+        name:"China",
+        capital:"Beijing",
+        latitude:"39.9042° N",
+        longitude:"116.4074° E",
+        system:"Socialist State",
+        structure:"Unitary State",
+        legislature:"National People's Congress",
+        government:"President",
+        region:"EAST ASIA"
+    },
+
+    france:{
+        flag:"pic/flags/france.png",
+        code:"FRA",
+        name:"France",
+        capital:"Paris",
+        latitude:"48.8566° N",
+        longitude:"2.3522° E",
+        system:"Semi-Presidential Republic",
+        structure:"Unitary Republic",
+        legislature:"Bicameral Parliament",
+        government:"President / Prime Minister",
+        region:"EUROPE"
+    },
+
+    japan:{
+        flag:"pic/flags/japan.png",
+        code:"JPN",
+        name:"Japan",
+        capital:"Tokyo",
+        latitude:"35.6762° N",
+        longitude:"139.6503° E",
+        system:"Parliamentary Democracy",
+        structure:"Constitutional Monarchy",
+        legislature:"Bicameral Diet",
+        government:"Prime Minister",
+        region:"EAST ASIA"
+    }
+
+};
+
+const countryButtons =
+    document.querySelectorAll(".country-btn");
+
+countryButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const key = button.dataset.country;
+        const country = countries[key];
+
+        document.getElementById("countryFlag").src =
+    country.flag;
+
+document.getElementById("countryFlag").alt =
+    country.name + " flag";
+
+        document.getElementById("countryCode").textContent =
+            country.code;
+
+        document.getElementById("countryName").textContent =
+            country.name;
+
+        document.getElementById("countryCapital").textContent =
+            country.capital;
+
+        document.getElementById("latitude").textContent =
+            country.latitude;
+
+        document.getElementById("longitude").textContent =
+            country.longitude;
+
+        document.getElementById("system").textContent =
+            country.system;
+
+        document.getElementById("structure").textContent =
+            country.structure;
+
+        document.getElementById("legislature").textContent =
+            country.legislature;
+
+        document.getElementById("government").textContent =
+            country.government;
+
+        document.getElementById("region").textContent =
+            country.region;
+
+        countryButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+    });
+
+});
 
 /* Gallery */
 const slides=[...document.querySelectorAll('.gallery-slide')], bars=[...document.querySelectorAll('#progress span')];let gi=0;
