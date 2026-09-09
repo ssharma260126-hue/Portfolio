@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#07111f">
 <title>Shivam Sharma — Political Science Scholar & UPPSC Aspirant</title>
+
+
 <style>
 :root{
   --navy:#07111f; --charcoal:#0b0f14; --ivory:#f5f0e6;
@@ -395,6 +397,203 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
     box-shadow:0 10px 30px rgba(216,181,106,.12);
 }
 
+/* ===== BEYOND THE RESUME ===== */
+
+.beyond{
+    position:relative;
+}
+
+.beyond .section-intro{
+    max-width:720px;
+    margin-bottom:45px;
+}
+
+.beyond-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    max-width:1000px;
+}
+
+.beyond-card{
+    position:relative;
+    min-height:210px;
+    padding:32px;
+    background:#0b1119;
+    transition:.4s ease;
+    overflow:hidden;
+}
+
+.beyond-card:hover{
+    background:#101a26;
+    transform:translateY(-3px);
+}
+
+.beyond-number{
+    display:block;
+    margin-bottom:35px;
+    color:var(--gold);
+    font-size:.7rem;
+    letter-spacing:.2em;
+}
+
+.beyond-card h3{
+    margin:0 0 12px;
+    color:#f4f0e8;
+    font-family:Georgia,serif;
+    font-size:1.5rem;
+    font-weight:400;
+}
+
+.beyond-card p{
+    margin:0;
+    max-width:380px;
+    color:#9da8b5;
+    font-size:.9rem;
+    line-height:1.7;
+}
+
+.beyond-card::after{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    right:-50px;
+    bottom:-50px;
+    border:1px solid rgba(216,181,106,.12);
+    border-radius:50%;
+    transition:.5s ease;
+}
+
+.beyond-card:hover::after{
+    transform:scale(2);
+}
+
+.card-arrow{
+    position:absolute;
+    right:28px;
+    bottom:25px;
+    color:var(--gold);
+    font-size:1.2rem;
+    opacity:.6;
+    transition:.3s ease;
+}
+
+.beyond-card:hover .card-arrow{
+    opacity:1;
+    transform:translate(4px,-4px);
+}
+
+.beyond-card{
+    cursor:pointer;
+}
+
+/* ===== BEYOND POPUP ===== */
+
+.beyond-popup{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(3,7,12,.82);
+    backdrop-filter:blur(10px);
+    opacity:0;
+    visibility:hidden;
+    transition:.35s ease;
+}
+
+.beyond-popup.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.beyond-popup-box{
+    position:relative;
+    width:min(650px,90%);
+    padding:55px;
+    background:#0b1119;
+    border:1px solid var(--line);
+    box-shadow:0 25px 80px rgba(0,0,0,.5);
+    transform:translateY(25px);
+    transition:.4s ease;
+}
+
+.beyond-popup.active .beyond-popup-box{
+    transform:translateY(0);
+}
+
+.beyond-popup-box h2{
+    margin:15px 0 20px;
+    font-family:Georgia,serif;
+    font-size:3rem;
+    font-weight:400;
+    color:#f4f0e8;
+}
+
+.beyond-popup-box p{
+    max-width:520px;
+    color:#aab4c0;
+    line-height:1.8;
+    font-size:1rem;
+}
+
+.beyond-close{
+    position:absolute;
+    top:20px;
+    right:22px;
+    width:38px;
+    height:38px;
+    border:1px solid var(--line);
+    background:transparent;
+    color:#f4f0e8;
+    font-size:1.5rem;
+    cursor:pointer;
+    transition:.3s ease;
+}
+
+.beyond-close:hover{
+    background:var(--gold);
+    color:#071019;
+}
+.moment-gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-top:30px;
+}
+
+.moment-gallery img{
+    width:100%;
+    height:130px;
+    object-fit:cover;
+    display:block;
+    border:1px solid var(--line);
+    transition:.35s ease;
+}
+
+.moment-gallery img:hover{
+    transform:scale(1.03);
+    border-color:var(--gold);
+}
+
+@media(max-width:600px){
+
+    .moment-gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .moment-gallery img{
+        height:110px;
+    }
+
+}#momentGallery{
+    display:none;
+}
+
 </style>
 
 <link rel="stylesheet"
@@ -604,6 +803,66 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
   </div>
   <div class="progress" id="progress"><span class="active"></span><span></span><span></span><span></span><span></span></div>
  </div>
+</section>
+
+<section class="section beyond" id="beyond">
+
+    <div class="container">
+
+        <div class="kicker">05 / BEYOND THE RESUME</div>
+
+        <h2>
+            More Than<br>
+            The Achievements
+        </h2>
+
+        <p class="section-intro">
+            A person is more than marks, ranks and titles.
+            These are some of the things that shape me beyond the classroom.
+        </p>
+
+        <div class="beyond-grid">
+
+    <div class="beyond-card" onclick="openBeyond('reading')">
+        <span class="beyond-number">01</span>
+        <h3>What I'm Reading</h3>
+        <p>
+            Books, ideas and perspectives that keep me curious.
+        </p>
+        <span class="card-arrow">↗</span>
+    </div>
+
+    <div class="beyond-card" onclick="openBeyond('people')">
+        <span class="beyond-number">02</span>
+        <h3>People Who Inspire Me</h3>
+        <p>
+            The conversations and people who have shaped the way I think.
+        </p>
+        <span class="card-arrow">↗</span>
+    </div>
+
+    <div class="beyond-card" onclick="openBeyond('learning')">
+        <span class="beyond-number">03</span>
+        <h3>Things I'm Learning</h3>
+        <p>
+            Understanding people, listening better and questioning my assumptions.
+        </p>
+        <span class="card-arrow">↗</span>
+    </div>
+
+    <div class="beyond-card" onclick="openBeyond('moments')">
+        <span class="beyond-number">04</span>
+        <h3>Small Moments</h3>
+        <p>
+            The ordinary moments that often become the most memorable ones.
+        </p>
+        <span class="card-arrow">↗</span>
+    </div>
+
+</div>
+
+    </div>
+
 </section>
 
 <section class="section ideas" id="ideas">
@@ -915,5 +1174,104 @@ const sections=[...document.querySelectorAll('main section[id]')];
 const secObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));const a=document.querySelector(`.nav-links a[href="#${e.target.id}"]`);if(a)a.classList.add('active')}}),{threshold:.45});
 sections.forEach(s=>secObs.observe(s));
 </script>
+<!-- BEYOND RESUME POPUP -->
+<div class="beyond-popup" id="beyondPopup">
+
+    <div class="beyond-popup-box">
+
+        <button class="beyond-close" onclick="closeBeyond()">×</button>
+
+        <div class="kicker" id="popupNumber">01 / READING</div>
+
+        <h2 id="popupTitle">What I'm Reading</h2>
+
+        <p id="popupText">
+    Books, ideas and perspectives that keep me curious.
+</p>
+
+        <div class="moment-gallery" id="momentGallery">
+
+    <img src="pic/moments/moment-01.jpg" alt="A personal moment">
+    <img src="pic/moments/moment-02.jpg" alt="A personal moment">
+    <img src="pic/moments/moment-03.jpg" alt="A personal moment">
+    <img src="pic/moments/moment-04.jpg" alt="A personal moment">
+    <img src="pic/moments/moment-05.jpg" alt="A personal moment">
+    <img src="pic/moments/moment-06.jpg" alt="A personal moment">
+
+</div>
+
+    </div>
+
+</div>
+
+<script>
+
+function openBeyond(type){
+
+    const popup = document.getElementById("beyondPopup");
+    const number = document.getElementById("popupNumber");
+    const title = document.getElementById("popupTitle");
+    const text = document.getElementById("popupText");
+    const gallery = document.getElementById("momentGallery");
+
+    // Hide gallery by default
+    gallery.style.display = "none";
+
+    if(type === "reading"){
+        number.innerText = "01 / READING";
+        title.innerText = "What I'm Reading";
+        text.innerText =
+        "Books, ideas and perspectives that keep me curious.";
+    }
+
+    if(type === "people"){
+        number.innerText = "02 / PEOPLE";
+        title.innerText = "People Who Inspire Me";
+        text.innerText =
+        "The people, conversations and experiences that continue to shape the way I think.";
+    }
+
+    if(type === "learning"){
+        number.innerText = "03 / LEARNING";
+        title.innerText = "Things I'm Learning";
+        text.innerText =
+        "Understanding people, listening better and questioning my assumptions.";
+    }
+
+    if(type === "moments"){
+        number.innerText = "04 / MOMENTS";
+        title.innerText = "Small Moments";
+        text.innerText =
+        "The ordinary moments that often become the most memorable ones.";
+
+        // Show photographs only for Small Moments
+        gallery.style.display = "grid";
+    }
+
+    popup.classList.add("active");
+}
+
+
+function closeBeyond(){
+
+    document
+        .getElementById("beyondPopup")
+        .classList.remove("active");
+
+}
+
+
+document
+    .getElementById("beyondPopup")
+    .addEventListener("click", function(e){
+
+        if(e.target === this){
+            closeBeyond();
+        }
+
+    });
+
+</script>
+
 </body>
 </html>
