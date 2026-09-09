@@ -330,6 +330,15 @@ h2{font-family:Georgia,serif;font-size:clamp(2.5rem,6vw,5.5rem);line-height:.95;
 .gallery-slide{position:absolute;inset:0;opacity:0;transform:scale(1.08);transition:opacity .9s,transform 5s;background:linear-gradient(120deg,#172536,#080c11);display:flex;align-items:end}
 .gallery-slide.active{opacity:1;transform:scale(1)}
 .gallery-slide .photo-placeholder{position:absolute;inset:0;display:grid;place-items:center;color:#637181;font-size:4rem;font-family:Georgia,serif}
+.photo-placeholder img{
+    width:75%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    margin-left:auto;
+    display:block;
+}
+
 .gallery-slide .caption{position:relative;z-index:2;padding:55px;max-width:650px;background:linear-gradient(transparent,rgba(0,0,0,.85));width:100%}
 .caption .num{color:var(--gold);font-size:.7rem;letter-spacing:.25em}.caption h3{font:clamp(2.2rem,5vw,4.8rem) Georgia,serif;margin:10px 0}.caption p{color:#bdc5ce;line-height:1.7}
 .gallery-controls{position:absolute;right:25px;bottom:25px;display:flex;gap:8px;z-index:3}
@@ -552,7 +561,10 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
   <p class="section-intro">A cinematic space for photographs, memories and milestones. Replace the placeholders below with real photographs.</p>
   <div class="gallery-stage">
    <!-- Replace each .photo-placeholder with <img src="..." alt="..."> -->
-   <div class="gallery-slide active"><div class="photo-placeholder">01</div><div class="caption"><div class="num">01 / BEGINNING</div><h3>A Beginning With Ambition</h3><p>A journey shaped by curiosity, discipline and a desire to understand the world.</p></div></div>
+   <div class="gallery-slide active"><div class="photo-placeholder">
+    <img src="pic/beginning.png" alt="Beginning of the journey">
+</div>
+<div class="caption"><div class="num">01 / BEGINNING</div><h3>A Beginning With Ambition</h3><p>A journey shaped by curiosity, discipline and a desire to understand the world.</p></div></div>
    <div class="gallery-slide"><div class="photo-placeholder">02</div><div class="caption"><div class="num">02 / ACADEMIA</div><h3>The Academic Journey</h3><p>Every classroom, book and discussion added another perspective.</p></div></div>
    <div class="gallery-slide"><div class="photo-placeholder">03</div><div class="caption"><div class="num">03 / EXCELLENCE</div><h3>The Pursuit of Excellence</h3><p>Achievement is not a destination, but the result of consistent effort.</p></div></div>
    <div class="gallery-slide"><div class="photo-placeholder">04</div><div class="caption"><div class="num">04 / POLITICAL SCIENCE</div><h3>A Student of Political Science</h3><p>Understanding power, institutions, society and the ideas that shape nations.</p></div></div>
