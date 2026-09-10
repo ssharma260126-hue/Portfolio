@@ -375,7 +375,19 @@ h2{font-family:Georgia,serif;font-size:clamp(2.5rem,6vw,5.5rem);line-height:.95;
     overflow-wrap:break-word;
 }
 .achievement h3{font:1rem Georgia,serif;margin:10px 0}.achievement p{color:#75818f;font-size:.78rem;line-height:1.5}
-.flags-section{background:#05080d;text-align:center}.flags-cloud{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:60px auto 0;max-width:900px}.big-flag{font-size:2rem;padding:20px 28px;border:1px solid var(--line);transition:.4s;background:rgba(255,255,255,.025)}.big-flag:hover{transform:translateY(-10px) rotate(-2deg);border-color:var(--gold);box-shadow:0 20px 45px rgba(0,0,0,.3)}
+.flags-section{background:#05080d;text-align:center}
+.flags-cloud{
+    display:flex;
+    flex-wrap:nowrap;
+    justify-content:center;
+    align-items:center;
+    gap:16px;
+    margin:60px auto 0;
+    max-width:100%;
+}
+.big-flag{
+    font-size:2rem;
+    padding:12px;border:1px solid var(--line);transition:.4s;background:rgba(255,255,255,.025)}.big-flag:hover{transform:translateY(-10px) rotate(-2deg);border-color:var(--gold);box-shadow:0 20px 45px rgba(0,0,0,.3)}
 .final{min-height:85vh;display:grid;place-items:center;text-align:center;overflow:hidden;background:radial-gradient(circle at center,#14263c,#05080c 62%)}.final h2{max-width:900px;margin:auto}.final p{max-width:680px;margin:30px auto;color:#9da8b4;line-height:1.9}.motto{font-size:.75rem;letter-spacing:.5em;color:var(--gold);text-transform:uppercase}
 .reveal{opacity:0;transform:translateY(35px);transition:opacity .9s,transform .9s}.reveal.visible{opacity:1;transform:none}
 footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
@@ -907,7 +919,7 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
 </div>
   <div class="reveal">
    <div class="kicker">02 / The Person Behind The Preparation</div><h2>Beyond the Books</h2>
-   <p class="section-intro bio"> A <b>UPPSC aspirant</b> and <b>Political Science</b> scholar with a deep interest in politics, governance, society, international affairs and public service. A former student of <b>Allahabad University</b>, his academic journey reflects discipline, curiosity and a sustained pursuit of excellence.</p>
+   <p class="section-intro bio"> A <b>UPPSC aspirant</b> and <b>Political Science</b> scholar with a deep interest in politics, governance, society, international affairs and public service. A former student of <b>Allahabad University</b>, my academic journey reflects discipline, curiosity and a sustained pursuit of excellence.</p>
    <div class="bio-highlight">
     <div class="stat"><strong>AU</strong><span>Allahabad University</span></div><div class="stat"><strong>PS</strong><span>POLITICAL SCIENCE</span></div><div class="stat"><strong>MILESTONE</strong><span>M.A. Final</span></div>
    </div>
@@ -1057,7 +1069,7 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
 
 <section class="section ideas" id="ideas">
  <div class="container">
-  <div class="kicker">05 / Political Thought</div><h2>Ideas Shape Nations</h2>
+  <div class="kicker">06 / Political Thought</div><h2>Ideas Shape Nations</h2>
   <div class="ideas-cloud reveal">
    <span class="idea">Democracy</span><span class="idea">Constitution</span><span class="idea">Governance</span><span class="idea">Justice</span><span class="idea">Liberty</span><span class="idea">Equality</span><span class="idea">Society</span><span class="idea">Power</span><span class="idea">Diplomacy</span><span class="idea">Policy</span>
    <div class="idea-center"><div class="quote">“Politics is ultimately about people, institutions and the ideas that determine the direction of society.”</div><small>POLITICAL THOUGHT</small></div>
@@ -1067,7 +1079,7 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
 
 <section class="section india" id="india">
  <div class="container">
-  <div class="kicker">06 / The Republic</div><h2>India: Democracy in Motion</h2>
+  <div class="kicker">07 / The Republic</div><h2>India: Democracy in Motion</h2>
   <p class="section-intro">Understanding the world leads back to understanding India — its Constitution, institutions, diversity and democratic promise.</p>
   <div class="india-map reveal">
    <div class="india-shape">INDIA</div>
@@ -1079,7 +1091,7 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
 
 <section class="section" id="upsc">
  <div class="container">
-  <div class="kicker">07 / Preparing for Purpose</div><h2>The UPPSC<br>Journey</h2>
+  <div class="kicker">08 / Preparing for Purpose</div><h2>The UPPSC<br>Journey</h2>
   <p class="section-intro">Connecting contemporary events with deeper political, historical and social understanding.</p>
   <div class="upsc-grid">
    <div class="upsc-card glass reveal"><div class="upsc-icon">📜</div><h3>Polity & Governance</h3><p>Understanding constitutional institutions and democratic governance.</p></div>
@@ -1094,7 +1106,7 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
 
 <section class="section achievements" id="achievements">
  <div class="container">
-  <div class="kicker">08 / MILESTONES ALONG THE WAY</div>
+  <div class="kicker">09 / MILESTONES ALONG THE WAY</div>
   <div class="achievement-grid">
    <div class="achievement reveal">
     <strong>BEGINNING</strong>
@@ -1124,17 +1136,37 @@ footer{padding:25px 0;border-top:1px solid var(--line);color:#677382;font-size:.
 
 <section class="section flags-section">
  <div class="container">
-  <div class="kicker">09 / Global Awareness</div><h2>A World of Different Systems,<br>One Shared Future</h2>
+  <div class="kicker">10 / Global Awareness</div><h2>A World of Different Systems,<br>One Shared Future</h2>
   <p class="section-intro" style="margin-left:auto;margin-right:auto">Political systems, cultures, governments and societies differ — yet their futures remain interconnected.</p>
   <div class="flags-cloud">
-   <div class="big-flag" title="India — parliamentary democracy">🇮🇳</div><div class="big-flag" title="United States">🇺🇸</div><div class="big-flag" title="United Kingdom">🇬🇧</div><div class="big-flag" title="China">🇨🇳</div><div class="big-flag" title="France">🇫🇷</div><div class="big-flag" title="Russia">🇷🇺</div><div class="big-flag" title="Japan">🇯🇵</div>
+   <div class="big-flag" title="India - parliamentary democracy">
+    <img src="https://flagcdn.com/w160/in.png" alt="India">
+</div>
+  <div class="big-flag" title="United States">
+    <img src="https://flagcdn.com/w160/us.png" alt="United States">
+</div>
+   <div class="big-flag" title="United Kingdom">
+    <img src="https://flagcdn.com/w160/gb.png" alt="United Kingdom">
+</div>
+   <div class="big-flag" title="China">
+    <img src="https://flagcdn.com/w160/cn.png" alt="China">
+</div>
+   <div class="big-flag" title="France">
+    <img src="https://flagcdn.com/w160/fr.png" alt="France">
+</div>
+   <div class="big-flag" title="Russia">
+    <img src="https://flagcdn.com/w160/ru.png" alt="Russia">
+</div>
+   <div class="big-flag" title="Japan">
+    <img src="https://flagcdn.com/w160/jp.png" alt="Japan">
+</div>
   </div>
  </div>
 </section>
 
 <section class="final section" id="contact">
  <div class="container reveal">
-  <div class="kicker">10 / The Journey Continues</div>
+  <div class="kicker">11 / The Journey Continues</div>
   <h2>The Journey Is Still Being Written</h2>
   <p>From the classrooms of Allahabad University to the continuing pursuit of knowledge and public service, every achievement is only a milestone in a much larger journey.</p>
   <div class="motto">Learn. Understand. Serve.</div>
